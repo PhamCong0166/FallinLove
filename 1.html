@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title> Random Heart Fall</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+
+</body>
+<script>
+	function createHeart() {
+		let randomFall =Math.floor(Math.random()*100)
+		let randomFallDuration =Math.floor(Math.random()*5)
+		let randomFallSize =Math.floor(Math.random()*50)
+		let heart = document.createElement('div')
+		heart.classList.add("heart")
+		heart.innerHTML = "&hearts;"
+		heart.style.fontSize=`${randomFallSize}px`
+		heart.style.left=`${randomFall}vw`
+		heart.style.animationDuration=`${randomFallDuration}s`
+		document.body.appendChild(heart)
+		setTimeout(() => {
+			heart.remove();
+		}, 5000);
+	}
+	setInterval(createHeart,50);
+</script>
+
+</html>
